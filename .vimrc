@@ -118,6 +118,7 @@ set cmdheight=2
  
 " Display line numbers on the left
 set number
+set relativenumber
  
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
@@ -156,4 +157,8 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
  
+" adding lines - without entering insert mode - cursor remains at same line
+nmap <C-J> o<Esc>k
+nmap <C-K> O<Esc>
+
 "------------------------------------------------------------
