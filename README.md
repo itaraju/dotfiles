@@ -1,1 +1,2 @@
 # dotfiles
+Applies to Darwin

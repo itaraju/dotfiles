@@ -1,0 +1,18 @@
+escape ^Gg # Instead of Control-a
+vbell off # turn off visual bell
+
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+#caption always "%{kB}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kB}%?%+Lw%?"
+#hardstatus alwayslastline "%{BW}%16=%l %{BW}%50=%d/%m/%Y %{BW}%80=%c%="
+
+# Default screens
+#screen -t R	0	Rx
+#screen -t shell	2	
+
+# test:
+bind j focus down
+bind k focus up
+split
+resize 15
