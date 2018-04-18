@@ -162,3 +162,6 @@ nmap <C-J> o<Esc>k
 nmap <C-K> O<Esc>
 
 "------------------------------------------------------------
+" Loading pathogen https://github.com/tpope/vim-pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
