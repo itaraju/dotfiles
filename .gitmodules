@@ -10,3 +10,9 @@
 [submodule "vim-bundle/vim-repeat"]
 	path = vim-bundle/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
+[submodule "vim-bundle/vim-pandoc"]
+	path = vim-bundle/vim-pandoc
+	url = git@github.com:vim-pandoc/vim-pandoc.git
+[submodule "vim-bundle/vim-pandoc-syntax"]
+	path = vim-bundle/vim-pandoc-syntax
+	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
