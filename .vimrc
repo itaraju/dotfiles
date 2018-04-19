@@ -67,7 +67,7 @@ set hlsearch
  
  
 "------------------------------------------------------------
-" Usability options {{{1
+" usability options {{{1
 "
 " These are options that users frequently set in their .vimrc. Some of them
 " change Vim's behaviour in ways which deviate from the true Vi way, but
@@ -94,6 +94,9 @@ set nostartofline
 " line of a window
 set ruler
  
+" Highlight the screen line of the cursor with CursorLine
+set cursorline
+
 " Always display the status line, even if only one window is displayed
 set laststatus=2
  
@@ -160,6 +163,15 @@ nnoremap <C-L> :nohl<CR><C-L>
 " adding lines - without entering insert mode - cursor remains at same line
 nmap <C-J> o<Esc>k
 nmap <C-K> O<Esc>
+
+" leader more accessible
+let mapleader = ","
+
+" one less keypress
+nnoremap ; :
+
+" one more keypress, but easier than reaching esc:
+inoremap jj <ESC>
 
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
