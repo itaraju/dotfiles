@@ -167,8 +167,8 @@ nmap <C-K> O<Esc>
 " leader more accessible
 let mapleader = ","
 
-" one less keypress
-nnoremap ; :
+" one less keypress - not great idea, already in use for finding again
+"nnoremap ; :
 
 " one more keypress, but easier than reaching esc:
 inoremap jj <ESC>
@@ -177,3 +177,11 @@ inoremap jj <ESC>
 " Loading pathogen https://github.com/tpope/vim-pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
+"------------------------------------------------------------
+" Completion/Context sensitive completion options
+
+" where to search. The initial .,w,b,u,t,i is default.
+" k brings search from dictionary, kspell only if set spell
+set complete=.,w,b,u,t,i,kspell
+
