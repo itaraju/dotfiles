@@ -2,7 +2,6 @@
 	name = Itaraju Brum
 	email = ib246@cornell.edu
 [core]
-	editor = mate -w
 [diff]
 	tool = opendiff
 [difftool]
