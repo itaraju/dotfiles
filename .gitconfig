@@ -1,13 +1,9 @@
 [user]
 	name = Itaraju Brum
-	email = ib246@cornell.edu
-[core]
-[diff]
-	tool = opendiff
+[color]
+    ui = true
 [difftool]
 	prompt = false
-[merge]
-	tool = opendiff
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
