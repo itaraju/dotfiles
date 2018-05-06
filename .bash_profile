@@ -1,3 +1,6 @@
+set -o vi
+bind -m vi-insert "\C-l":clear-screen
+
 alias l.='ls -d .*'
 alias ll='ls -lh'
 alias ls='ls -G'
