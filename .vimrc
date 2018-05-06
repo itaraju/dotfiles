@@ -53,6 +53,10 @@ set hidden
 " Better command-line completion
 set wildmenu
  
+" search down into subfolders
+" provides tab-completion for all file-related tasks
+set path+=**
+
 " Show partial commands in the last line of the screen
 set showcmd
  
