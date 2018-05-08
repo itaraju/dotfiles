@@ -27,3 +27,6 @@ else
     set pythondll=/usr/local/Frameworks/Python.framework/Versions/2.7/Python
     set pythonhome=/usr/local/Frameworks/Python.framework/Versions/2.7
 endif
+
+" gruvbox conf (https://github.com/morhetz/gruvbox/wiki/Configuration)
+let g:gruvbox_contrast_dark = 'hard'
