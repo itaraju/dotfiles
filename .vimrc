@@ -159,6 +159,9 @@ set expandtab
 "
 " Useful mappings
  
+" leader more accessible
+let mapleader = " "
+
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
@@ -171,8 +174,9 @@ nnoremap <C-L> :nohl<CR><C-L>
 nmap <C-J> o<Esc>k
 nmap <C-K> O<Esc>
 
-" leader more accessible
-let mapleader = ","
+" next buffer
+nmap <leader>t :bn<CR>
+nmap <leader>T :bp<CR>
 
 " one less keypress - not great idea, already in use for finding again
 "nnoremap ; :
@@ -192,3 +196,6 @@ execute pathogen#infect()
 " k brings search from dictionary, kspell only if set spell
 set complete=.,w,b,u,t,i,kspell
 
+"------------------------------------------------------------
+" vim-airline settings
+let g:airline#extensions#tabline#enabled = 1
