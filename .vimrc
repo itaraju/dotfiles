@@ -199,3 +199,11 @@ set complete=.,w,b,u,t,i,kspell
 "------------------------------------------------------------
 " vim-airline settings
 let g:airline#extensions#tabline#enabled = 1
+
+"------------------------------------------------------------
+" vim-surround customizations
+
+" add/remove comments with 'c' in rmd, md files (for pandoc)
+" Obs: removal not working well with multiple-lines
+autocmd FileType rmd,pandoc let b:surround_99 = "<!--\r-->"
+autocmd FileType rmd,pandoc nmap <buffer> dsc ds-ds-ds>x
