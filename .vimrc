@@ -207,3 +207,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Obs: removal not working well with multiple-lines
 autocmd FileType rmd,pandoc let b:surround_99 = "<!--\r-->"
 autocmd FileType rmd,pandoc nmap <buffer> dsc ds-ds-ds>x
+" folding code blocks and YAML section
+let g:pandoc#folding#fold_fenced_codeblocks = 1
+let g:pandoc#folding#fold_yaml=1
