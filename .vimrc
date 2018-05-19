@@ -184,6 +184,9 @@ nmap <leader>T :bp<CR>
 " one more keypress, but easier than reaching esc:
 inoremap jj <ESC>
 
+" easier windowing
+nmap <leader>w <C-w>
+
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
