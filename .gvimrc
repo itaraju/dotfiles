@@ -8,6 +8,9 @@ set guifont=Monaco:h12
 " enabling mouse for all modes
 set mouse=a
 
+" no scrollbars
+set guioptions-=r
+
 " maping A-CR to run commands on the last terminal
 nmap <A-CR> !!send_text_term.sh <CR><Undo><Down>
 vmap <A-CR> !send_text_term.sh <CR><Undo> `><Down>

@@ -16,3 +16,4 @@
 [alias]
 	tree = log --oneline --graph --all
 	wdiff = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+        s = status

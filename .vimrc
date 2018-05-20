@@ -136,6 +136,8 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
  
+" colors - industry for terminal with a dark background
+colorscheme industry
  
 "------------------------------------------------------------
 " Indentation options {{{1
