@@ -9,7 +9,7 @@ set guifont=Monaco:h12
 set mouse=a
 
 " no scrollbars
-set guioptions-=r
+set guioptions-=rL
 
 " fixing python3 errors
 " from: https://github.com/vim-pandoc/vim-pandoc/issues/259
@@ -29,28 +29,28 @@ let g:gruvbox_contrast_dark = 'hard'
 " ------------------------------------------------
 " Key mappings
 
-" using mac command key
-imap <D-r> <c-r>
-nmap <D-r> <c-r>
-macm Edit.Select\ All key=<D-A>
-imap <D-a> <c-a>
-nmap <D-a> <c-a>
-macm Edit.Cut key=<D-X>
-imap <D-x> <c-x>
-nmap <D-x> <c-x>
-macm File.Print key=<D-P>
-imap <D-p> <c-p>
-macm File.New\ Window key=<D-N>
-imap <D-n> <c-n>
-macm Edit.Find.Find\.\.\. key=<D-F>
-imap <D-f> <c-f>
-macm File.Open\.\.\. key=<D-O>
-imap <D-o> <c-o>
-nmap <D-o> <c-o>
-macm Tools.List\ Errors key=<D-L>
-imap <D-l> <c-l>
-imap <D-]> <c-]>
-nmap <D-]> <c-]>
+" using mac command key (all commented-out here, as cmd-ctrl were system-wide switched)
+" imap <D-r> <c-r>
+" nmap <D-r> <c-r>
+" macm Edit.Select\ All key=<D-A>
+" imap <D-a> <c-a>
+" nmap <D-a> <c-a>
+" macm Edit.Cut key=<D-X>
+" imap <D-x> <c-x>
+" nmap <D-x> <c-x>
+" macm File.Print key=<D-P>
+" imap <D-p> <c-p>
+" macm File.New\ Window key=<D-N>
+" imap <D-n> <c-n>
+" macm Edit.Find.Find\.\.\. key=<D-F>
+" imap <D-f> <c-f>
+" macm File.Open\.\.\. key=<D-O>
+" imap <D-o> <c-o>
+" nmap <D-o> <c-o>
+" macm Tools.List\ Errors key=<D-L>
+" imap <D-l> <c-l>
+" imap <D-]> <c-]>
+" nmap <D-]> <c-]>
 
 " maping A-CR to run commands on the last terminal
 nmap <A-CR> !!send_text_term.sh <CR><Undo><Down>

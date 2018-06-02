@@ -1,4 +1,4 @@
-set -o vi
+set editing-mode vi
 bind -m vi-insert "\C-l":clear-screen
 
 alias l.='ls -d .*'
