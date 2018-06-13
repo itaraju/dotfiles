@@ -175,7 +175,9 @@ nnoremap <C-L> :nohl<CR><C-L>
 " adding lines - without entering insert mode - cursor remains at same line
 nmap <C-J> o<Esc>k
 nmap <C-K> O<Esc>
-
+" same as above, with spaces
+nmap <C-H> i <ESC>l
+ 
 " next buffer
 nmap <leader>t :bn<CR>
 nmap <leader>T :bp<CR>
