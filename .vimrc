@@ -172,18 +172,22 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
  
-" adding lines - without entering insert mode - cursor remains at same line
+" adding lines - without entering insert mode
 nmap <C-J> o<Esc>k
 nmap <C-K> O<Esc>
+nmap <leader>j i<CR><ESC>
 " same as above, with spaces
 nmap <C-H> i <ESC>l
+nmap <leader>l a <ESC>h
  
 " next buffer
 nmap <leader>t :bn<CR>
 nmap <leader>T :bp<CR>
 
-" one less keypress - not great idea, already in use for finding again
-"nnoremap ; :
+" one less keypress (as this implies killing ; jumps, ; remapped too)
+nnoremap ; :
+vnoremap ; :
+noremap ;; ;
 
 " one more keypress, but easier than reaching esc:
 inoremap jj <ESC>
