@@ -178,7 +178,7 @@ nmap <C-K> O<Esc>
 nmap <leader>j i<CR><ESC>
 " same as above, with spaces
 nmap <C-H> i <ESC>l
-nmap <leader>l a <ESC>h
+nmap <leader>l a <ESC>
  
 " next buffer
 nmap <leader>t :bn<CR>
