@@ -1,15 +1,15 @@
 # dotfiles
 
-Applies to Darwin
+Applies to Linus
 
 # folders
 
-- vim-bundle -> ~/.vim/bundle
+- vim-bundle → ~/.vim/bundle
 
-- vim-colors -> ~/.vim/colors
+- vim-colors → ~/.vim/colors
 
-- local-bin/* -> either local/bin/* or ~/bin/*
+- local-bin/* → either local/bin/* or ~/bin/*
 
-- mac-script -> Apple scripts, to use as source for apple script apps
+- ranger → ~/.config/ranger
 
-- ranger -> ~/.config/ranger
+- i3 → ~/.config/i3
