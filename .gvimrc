@@ -3,7 +3,7 @@ colorscheme industry
 set bg=dark
 
 " fonts
-" set guifont=Monaco:h12
+set guifont=Inconsolata
 
 " enabling mouse for all modes
 set mouse=a
