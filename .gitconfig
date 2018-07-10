@@ -3,7 +3,7 @@
 	email = ib246@cornell.edu
 [core]
 [diff]
-	tool = opendiff
+	tool = meld
 [difftool]
 	prompt = false
 [merge]
