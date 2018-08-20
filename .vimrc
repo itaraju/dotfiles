@@ -181,19 +181,30 @@ nmap <C-H> i <ESC>l
 nmap <leader>l a <ESC>
  
 " next buffer
-nmap <leader>t :bn<CR>
-nmap <leader>T :bp<CR>
+nnoremap <leader>t :bn<CR>
+nnoremap <leader>T :bp<CR>
 
 " one less keypress (as this implies killing ; jumps, ; remapped too)
-nnoremap ; :
-vnoremap ; :
-noremap ;; ;
+" nnoremap ; :
+" vnoremap ; :
+" noremap ;; ;
+" suggestion from: https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
+nnoremap : ,
+xnoremap : ,
+onoremap : ,
+nnoremap , :
+xnoremap , :
+onoremap , :
 
 " one more keypress, but easier than reaching esc:
 inoremap jj <ESC>
 
 " easier windowing
 nmap <leader>w <C-w>
+
+" Copy & Paste from clipboard
+vnoremap <C-c> "*y :let @+=@*<CR>
+nmap <C-p> "+p
 
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
@@ -218,6 +229,17 @@ let g:airline#extensions#tabline#enabled = 1
 " Obs: removal not working well with multiple-lines
 autocmd FileType rmd,pandoc let b:surround_99 = "<!--\r-->"
 autocmd FileType rmd,pandoc nmap <buffer> dsc ds-ds-ds>x
+
+"------------------------------------------------------------
+" R, Rmd customizations - Nvim-R, pandoc related
+
 " folding code blocks and YAML section
 let g:pandoc#folding#fold_fenced_codeblocks = 1
 let g:pandoc#folding#fold_yaml=1
+
+" c-i to insert %in%
+autocmd FileType rmd,r imap <buffer> <C-i> %in%
+
+" assigm operator with Alt-M
+set <M-->=-
+let R_assign_map = '<M-->'

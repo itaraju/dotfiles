@@ -7,7 +7,7 @@
 [difftool]
 	prompt = false
 [merge]
-	tool = opendiff
+	tool = meld
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process

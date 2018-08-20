@@ -43,7 +43,7 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # start dmenu (a program launcher)
-bindsym $mod+Shift+Escape exec i3lock -i ~/Pictures/background.png
+bindsym $mod+Shift+Escape exec i3lock --ignore-empty-password -i ~/Pictures/background.png
 
 # change focus
 bindsym $mod+h focus left
@@ -193,5 +193,5 @@ bindsym $mod+n border normal
 # Autostart programs
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id nm-applet
-exec --no-startup-id xautolock -time 5 -locker "i3lock -i ~/Pictures/background.png"
+exec --no-startup-id xautolock -time 5 -locker "i3lock --ignore-empty-password -i ~/Pictures/background.png"
 exec --no-startup-id megasync
