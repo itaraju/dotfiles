@@ -246,3 +246,16 @@ autocmd FileType rmd,r imap <buffer> <C-i> %in%
 " assigm operator with Alt-M
 set <M-->=-
 let R_assign_map = '<M-->'
+
+" R output is highlighted with current colorscheme
+let g:rout_follow_colorscheme = 1
+" R commands in R output are highlighted
+let g:Rout_more_colors = 1
+
+" R in a terminal
+let R_in_buffer = 0
+let R_term = 'gnome-terminal'
+let R_app = "rtichoke"
+let R_cmd = "R"
+let R_hl_term = 0
+let R_bracketed_paste = 1
