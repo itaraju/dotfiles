@@ -15,6 +15,7 @@ compinit
 # aliases
 alias vim=/usr/bin/vimx
 alias e=exit
+alias r=rtichoke
 
 # defaults
 export EDITOR=vimx
