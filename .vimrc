@@ -237,6 +237,9 @@ autocmd FileType rmd,pandoc nmap <buffer> dsc ds-ds-ds>x
 let g:pandoc#folding#fold_fenced_codeblocks = 1
 let g:pandoc#folding#fold_yaml=1
 
+" prevent spell
+let g:pandoc#spell#enabled=0
+
 " c-i to insert %in%
 autocmd FileType rmd,r imap <buffer> <C-i> %in%
 
