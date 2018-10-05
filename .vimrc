@@ -259,3 +259,15 @@ let R_app = "rtichoke"
 let R_cmd = "R"
 let R_hl_term = 0
 let R_bracketed_paste = 1
+
+" Setup Vim to use the remote R only if the output of df includes
+" the string 'remoteR', that is, the remote file system is mounted:
+if system('df') =~ 'remoteR'
+    let $NVIM_IP_ADDRESS = substitute(system("hostname -I"), " .*", "", "")
+    let R_app = '/home/itaraju/bin/sshR'
+    let R_cmd = '/home/itaraju/bin/sshR'
+    let R_compldir = '/home/itaraju/.remoteR/NvimR_cache'
+    let R_tmpdir = '/home/itaraju/.remoteR/NvimR_cache/tmp'
+    let R_remote_tmpdir = '/home/itaraju/.cache/NvimR_cache/tmp'
+    let R_nvimcom_home = '/home/itaraju/.remoteR/R_library/nvimcom'
+endif
