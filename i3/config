@@ -193,7 +193,7 @@ bindsym $mod+n border normal
 # Autostart programs
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id nm-applet
-exec --no-startup-id xautolock -time 5 -locker "i3lock --ignore-empty-password -i ~/Pictures/background.png"
+exec --no-startup-id xautolock -time 10 -locker "i3lock --ignore-empty-password -i ~/Pictures/background.png"
 exec --no-startup-id megasync
 
 # setting keyboard layout to us / us int with Alt_Space toggling
