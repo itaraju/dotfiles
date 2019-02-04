@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -84,10 +84,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+t floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Tab focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -193,7 +193,6 @@ bindsym $mod+n border normal
 # Autostart programs
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id nm-applet
-exec --no-startup-id xautolock -time 10 -locker "i3lock --ignore-empty-password -i ~/Pictures/background.png"
 exec --no-startup-id megasync
 
 # setting keyboard layout to us / us int with Alt_Space toggling
