@@ -206,6 +206,14 @@ nmap <leader>w <C-w>
 vnoremap <C-c> "*y :let @+=@*<CR>
 nmap <C-p> "+p
 
+" Insert a single character
+" as in: http://vim.wikia.com/wiki/Insert_a_single_character
+function! RepeatChar(char, count)
+  return repeat(a:char, a:count)
+endfunction
+nnoremap <leader>i :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <leader>a :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
