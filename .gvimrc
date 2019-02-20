@@ -5,9 +5,6 @@ set bg=dark
 " fonts
 set guifont=Inconsolata
 
-" enabling mouse for all modes
-set mouse=a
-
 " no scrollbars, menu, tool bar
 set guioptions =ai
 
