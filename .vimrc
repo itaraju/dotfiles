@@ -214,6 +214,10 @@ endfunction
 nnoremap <leader>i :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap <leader>a :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
+" send text to tmux
+nmap <leader><CR> ,.w !send_text_tmux.sh <CR><Down>
+vmap <leader><CR> ,w !send_text_tmux.sh <CR><CR> '><Down>
+
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -262,7 +266,7 @@ let g:Rout_more_colors = 1
 
 " R in a terminal
 let R_in_buffer = 0
-let R_term = 'gnome-terminal'
+let R_term = 'urxvt256c'
 let R_app = "rtichoke"
 let R_cmd = "R"
 let R_hl_term = 0
