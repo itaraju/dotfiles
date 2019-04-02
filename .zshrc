@@ -18,4 +18,4 @@ alias e=exit
 alias r=radian
 
 # defaults
-export EDITOR=vimx
+export EDITOR=vis

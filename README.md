@@ -13,3 +13,5 @@ Applies to Linus
 - ranger → ~/.config/ranger
 
 - i3 → ~/.config/i3
+
+- vis → ~/.config/vis
