@@ -44,3 +44,6 @@ options(
     # enable reticulate prompt and trigger `~`
     radian.enable_reticulate_prompt = TRUE
 )
+.width <- function(howWide=Sys.getenv("COLUMNS")) {
+  options(width=as.integer(howWide))
+}
