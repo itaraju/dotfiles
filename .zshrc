@@ -17,6 +17,9 @@ setopt COMPLETE_IN_WORD
 
 autoload -U colors
 colors
+
+precmd() { pwd > "${XDG_RUNTIME_DIR}/.cwd" }
+
 # aliases
 alias vim=/usr/bin/vimx
 alias e=exit
