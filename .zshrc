@@ -12,6 +12,11 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+#allow tab completion in the middle of a word
+setopt COMPLETE_IN_WORD
+
+autoload -U colors
+colors
 # aliases
 alias vim=/usr/bin/vimx
 alias e=exit
