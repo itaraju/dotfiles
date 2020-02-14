@@ -1,2 +1,2 @@
 # sending text to tmux named below
-xargs -0 tmux send-keys -l
+xargs -0 tmux send-keys -l -t run
