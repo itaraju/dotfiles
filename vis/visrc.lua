@@ -3,7 +3,9 @@ require('vis')
 
 vis.events.subscribe(vis.events.INIT, function()
 	-- Your global configuration options
-	vis:command("set escdelay 10")
+	vis:command("set escdelay 5")
+	vis:command('set tabwidth 4')
+	vis:command('set autoindent on')
 	-- key mappings
 	vis:command("map! normal <Space>w <C-w>")
 	vis:command("map! normal <Space>j <vis-prompt-show>")
@@ -21,6 +23,6 @@ vis.events.subscribe(vis.events.WIN_OPEN, function(win)
 	-- Your per window configuration options e.g.
 	-- vis:command('set number')
 	vis:command('set theme "my16"')
-	vis:command('set cursorline')
 	vis:command('set relativenumber')
+	vis:command('set cursorline')
 end)
