@@ -53,12 +53,19 @@ set hidden
 " Better command-line completion
 set wildmenu
  
+" search down into subfolders
+" provides tab-completion for all file-related tasks
+set path+=**
+
 " Show partial commands in the last line of the screen
 set showcmd
  
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
+
+" As search patttern is typed, show where it is matching
+set incsearch
  
 " Modelines have historically been a source of security vulnerabilities. As
 " such, it may be a good idea to disable them and use the securemodelines
@@ -113,7 +120,7 @@ set visualbell
 set t_vb=
  
 " Enable use of the mouse for all modes
-set mouse=i
+set mouse=a
  
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
@@ -129,6 +136,8 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
  
+" colors - industry for terminal with a dark background
+colorscheme industry
  
 "------------------------------------------------------------
 " Indentation options {{{1
@@ -152,6 +161,9 @@ set expandtab
 "
 " Useful mappings
  
+" leader more accessible
+let mapleader = " "
+
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
@@ -160,18 +172,51 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
  
-" adding lines - without entering insert mode - cursor remains at same line
+" adding lines - without entering insert mode
 nmap <C-J> o<Esc>k
 nmap <C-K> O<Esc>
+nmap <leader>j i<CR><ESC>
+" same as above, with spaces
+nmap <C-H> i <ESC>l
+nmap <leader>l a <ESC>
+ 
+" next buffer
+nnoremap <leader>t :bn<CR>
+nnoremap <leader>T :bp<CR>
 
-" leader more accessible
-let mapleader = ","
-
-" one less keypress - not great idea, already in use for finding again
-"nnoremap ; :
+" one less keypress (as this implies killing ; jumps, ; remapped too)
+" nnoremap ; :
+" vnoremap ; :
+" noremap ;; ;
+" suggestion from: https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
+nnoremap : ,
+xnoremap : ,
+onoremap : ,
+nnoremap , :
+xnoremap , :
+onoremap , :
 
 " one more keypress, but easier than reaching esc:
 inoremap jj <ESC>
+
+" easier windowing
+nmap <leader>w <C-w>
+
+" Copy & Paste from clipboard
+vnoremap <C-c> "*y :let @+=@*<CR>
+nmap <C-p> "+p
+
+" Insert a single character
+" as in: http://vim.wikia.com/wiki/Insert_a_single_character
+function! RepeatChar(char, count)
+  return repeat(a:char, a:count)
+endfunction
+nnoremap <leader>i :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <leader>a :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+
+" send text to tmux
+nmap <leader><CR> ,.w !send_text_tmux.sh <CR><Down>
+vmap <leader><CR> ,w !send_text_tmux.sh <CR><CR> '><Down>
 
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
@@ -185,3 +230,56 @@ execute pathogen#infect()
 " k brings search from dictionary, kspell only if set spell
 set complete=.,w,b,u,t,i,kspell
 
+"------------------------------------------------------------
+" vim-airline settings
+let g:airline#extensions#tabline#enabled = 1
+
+"------------------------------------------------------------
+" vim-surround customizations
+
+" add/remove comments with 'c' in rmd, md files (for pandoc)
+" Obs: removal not working well with multiple-lines
+autocmd FileType rmd,pandoc let b:surround_99 = "<!--\r-->"
+autocmd FileType rmd,pandoc nmap <buffer> dsc ds-ds-ds>x
+
+"------------------------------------------------------------
+" R, Rmd customizations - Nvim-R, pandoc related
+
+" folding code blocks and YAML section
+let g:pandoc#folding#fold_fenced_codeblocks = 1
+let g:pandoc#folding#fold_yaml=1
+
+" prevent spell
+let g:pandoc#spell#enabled=0
+
+" c-i to insert %in%
+autocmd FileType rmd,r imap <buffer> <C-i> %in%
+
+" assigm operator with Alt-M
+set <M-->=-
+let R_assign_map = '<M-->'
+
+" R output is highlighted with current colorscheme
+let g:rout_follow_colorscheme = 1
+" R commands in R output are highlighted
+let g:Rout_more_colors = 1
+
+" R in a terminal
+let R_in_buffer = 0
+let R_term = 'urxvt256c'
+let R_app = "rtichoke"
+let R_cmd = "R"
+let R_hl_term = 0
+let R_bracketed_paste = 1
+
+" Setup Vim to use the remote R only if the output of df includes
+" the string 'remoteR', that is, the remote file system is mounted:
+if system('df') =~ 'remoteR'
+    let $NVIM_IP_ADDRESS = substitute(system("hostname -I"), " .*", "", "")
+    let R_app = '/home/itaraju/bin/sshR'
+    let R_cmd = '/home/itaraju/bin/sshR'
+    let R_compldir = '/home/itaraju/.remoteR/NvimR_cache'
+    let R_tmpdir = '/home/itaraju/.remoteR/NvimR_cache/tmp'
+    let R_remote_tmpdir = '/home/itaraju/.cache/NvimR_cache/tmp'
+    let R_nvimcom_home = '/home/itaraju/.remoteR/R_library/nvimcom'
+endif

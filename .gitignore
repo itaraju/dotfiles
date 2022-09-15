@@ -1,2 +1,7 @@
 # vim temp files
 *.swp 
+
+# ranger non-config files
+ranger/bookmarks
+ranger/history
+ranger/tagged

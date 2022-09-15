@@ -1,0 +1,7 @@
+#! /usr/bin/sh
+# set time of file the same as in git HEAD
+# ref: https://stackoverflow.com/a/22638823
+
+for f in $@; do
+	touch -d @0`git log --pretty=%at -n1 -- "$f"` "$f"
+done

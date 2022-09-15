@@ -1,3 +1,9 @@
+# vi mode in bash
+set editing-mode vi
+# to have c-l to clear the screen in vi mode
+bind -m vi-insert "\C-l":clear-screen
+
+# aliases
 alias l.='ls -d .*'
 alias ll='ls -lh'
 alias ls='ls -G'

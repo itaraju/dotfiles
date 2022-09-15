@@ -1,9 +1,7 @@
 [user]
 	name = Itaraju Brum
-[color]
-    ui = true
-[difftool]
-	prompt = false
+	email = itaraju@ctc.com.br
+[core]
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -11,4 +9,8 @@
 	clean = git-lfs clean -- %f
 [alias]
 	tree = log --oneline --graph --all
+	l = log --pretty=format:'%C(auto)%h %C(Cyan)%ad%C(auto) %d%s' --date=short
 	wdiff = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+        s = status -s
+[init]
+	defaultBranch = main
