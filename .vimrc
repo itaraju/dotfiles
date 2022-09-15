@@ -184,17 +184,10 @@ nmap <leader>l a <ESC>
 nnoremap <leader>t :bn<CR>
 nnoremap <leader>T :bp<CR>
 
-" one less keypress (as this implies killing ; jumps, ; remapped too)
-" nnoremap ; :
-" vnoremap ; :
-" noremap ;; ;
-" suggestion from: https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
-nnoremap : ,
-xnoremap : ,
-onoremap : ,
-nnoremap , :
-xnoremap , :
-onoremap , :
+" alternative access to command prompt
+nnoremap <leader>u :
+xnoremap <leader>u :
+onoremap <leader>u :
 
 " one more keypress, but easier than reaching esc:
 inoremap jj <ESC>
@@ -203,8 +196,9 @@ inoremap jj <ESC>
 nmap <leader>w <C-w>
 
 " Copy & Paste from clipboard
-vnoremap <C-c> "*y :let @+=@*<CR>
-nmap <C-p> "+p
+vnoremap <leader>y "*y :let @+=@*<CR>
+nmap <leader>p "+p
+nmap <leader>P "+P
 
 " Insert a single character
 " as in: http://vim.wikia.com/wiki/Insert_a_single_character
@@ -215,8 +209,8 @@ nnoremap <leader>i :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1
 nnoremap <leader>a :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
 " send text to tmux
-nmap <leader><CR> ,.w !send_text_tmux.sh <CR><Down>
-vmap <leader><CR> ,w !send_text_tmux.sh <CR><CR> '><Down>
+nmap <leader><CR> :.w !send_text_tmux.sh <CR><Down>
+vmap <leader><CR> :w !send_text_tmux.sh <CR><CR> '><Down>
 
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
