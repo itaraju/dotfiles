@@ -18,3 +18,5 @@
 	l = log --pretty=format:'%C(auto)%h %C(Cyan)%ad%C(auto) %d%s' --date=short
 	wdiff = diff --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
         s = status -s
+[init]
+	defaultBranch = main

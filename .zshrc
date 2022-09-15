@@ -23,7 +23,12 @@ precmd() { pwd > "${XDG_RUNTIME_DIR}/.cwd" }
 # aliases
 alias vim=/usr/bin/vimx
 alias e=exit
-alias r=radian
+alias r='R --no-save --quiet'
+alias h='highlight --out-format=ansi'
+alias ll='ls -lh --color=auto'
+alias diff='diff --color=always'
+alias less='less -RSi'
+alias xclipc='xclip -sel clip'
 
 # defaults
 export EDITOR=vis
