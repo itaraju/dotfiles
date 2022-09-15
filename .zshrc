@@ -28,7 +28,6 @@ alias h='highlight --out-format=ansi'
 alias ll='ls -lh --color=auto'
 alias diff='diff --color=always'
 alias less='less -RSi'
-alias xclipc='xclip -sel clip'
 
 # defaults
 export EDITOR=vis
