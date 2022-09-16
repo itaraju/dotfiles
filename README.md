@@ -15,3 +15,5 @@ Applies to Linus
 - i3 → ~/.config/i3
 
 - vis → ~/.config/vis
+
+- radian → ~/.config/radian
