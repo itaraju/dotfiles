@@ -102,7 +102,7 @@ set nostartofline
 set ruler
  
 " Highlight the screen line of the cursor with CursorLine
-set cursorline
+" set cursorline
 
 " Always display the status line, even if only one window is displayed
 set laststatus=2
@@ -214,8 +214,8 @@ vmap <leader><CR> :w !send_text_tmux.sh <CR><CR> '><Down>
 
 "------------------------------------------------------------
 " Loading pathogen https://github.com/tpope/vim-pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+" runtime bundle/vim-pathogen/autoload/pathogen.vim
+" execute pathogen#infect()
 
 "------------------------------------------------------------
 " Completion/Context sensitive completion options
@@ -258,22 +258,6 @@ let g:rout_follow_colorscheme = 1
 " R commands in R output are highlighted
 let g:Rout_more_colors = 1
 
-" R in a terminal
-let R_in_buffer = 0
-let R_term = 'urxvt256c'
-let R_app = "rtichoke"
-let R_cmd = "R"
-let R_hl_term = 0
-let R_bracketed_paste = 1
-
-" Setup Vim to use the remote R only if the output of df includes
-" the string 'remoteR', that is, the remote file system is mounted:
-if system('df') =~ 'remoteR'
-    let $NVIM_IP_ADDRESS = substitute(system("hostname -I"), " .*", "", "")
-    let R_app = '/home/itaraju/bin/sshR'
-    let R_cmd = '/home/itaraju/bin/sshR'
-    let R_compldir = '/home/itaraju/.remoteR/NvimR_cache'
-    let R_tmpdir = '/home/itaraju/.remoteR/NvimR_cache/tmp'
-    let R_remote_tmpdir = '/home/itaraju/.cache/NvimR_cache/tmp'
-    let R_nvimcom_home = '/home/itaraju/.remoteR/R_library/nvimcom'
-endif
+"-----------------------------------------------
+" for use in windows
+set fileformat=unix
