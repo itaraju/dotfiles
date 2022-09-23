@@ -1,19 +1,12 @@
 # dotfiles
 
-Applies to Linus
+Applies to Windows machines
 
-# folders
+# folders/files
 
-- vim-bundle → ~/.vim/bundle
+include gruvbox folder inside:
+<vim dir>/pack/default/start/
+ref: https://github.com/morhetz/gruvbox/wiki/Installation
 
-- vim-colors → ~/.vim/colors
-
-- local-bin/* → either local/bin/* or ~/bin/*
-
-- ranger → ~/.config/ranger
-
-- i3 → ~/.config/i3
-
-- vis → ~/.config/vis
-
-- radian → ~/.config/radian
+copy .vimrc .gvimrc to:
+<vim dir>

@@ -1,15 +1,13 @@
 " colors
-colorscheme industry
-set bg=dark
+set bg=light
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " fonts
-set guifont=Inconsolata
+set guifont=Consolas:h11:cANSI
 
 " no scrollbars, menu, tool bar
 set guioptions =ai
-
-" gruvbox conf (https://github.com/morhetz/gruvbox/wiki/Configuration)
-let g:gruvbox_contrast_dark = 'hard'
+set laststatus=0 " no status line
 
 " ------------------------------------------------
 " Key mappings
