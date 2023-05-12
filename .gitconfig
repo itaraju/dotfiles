@@ -20,3 +20,5 @@
         s = status -s
 [init]
 	defaultBranch = main
+[safe]
+	directory = *

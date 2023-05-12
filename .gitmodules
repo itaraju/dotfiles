@@ -31,3 +31,6 @@
 [submodule "vim-bundle/tcomment_vim"]
 	path = vim-bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "vim-bundle/idris2-vim"]
+	path = vim-bundle/idris2-vim
+	url = git@github.com:edwinb/idris2-vim.git

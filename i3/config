@@ -89,6 +89,9 @@ bindsym $mod+Shift+t floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+Tab focus mode_toggle
 
+# zoom floating window
+bindsym $mod+x [con_id=__focused__] move position 350 100; resize set 1300 900
+
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -197,3 +200,12 @@ exec --no-startup-id megasync
 
 # setting keyboard layout to us / us int with Alt_Space toggling
 exec --no-startup-id setxkbmap -layout us,us -variant intl, -option 'grp:alt_space_toggle'
+
+# startup
+exec --no-startup-id i3-msg 'workspace 10; exec urxvt256c -e tmux new -s ct -n ranger "VISUAL=vis ranger"'
+exec --no-startup-id i3-msg 'workspace 10; exec urxvt256c -e zsh -c "/usr/bin/vimx -S ~/tips/stickers.vim"'
+for_window [workspace=10] floating enable
+for_window [title=tmux] move position 700 150
+for_window [title=tmux] resize set 1200 800
+for_window [title=note1] move position 30 150
+for_window [title=note1] resize set 650 700
